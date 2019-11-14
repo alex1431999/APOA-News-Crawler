@@ -1,0 +1,21 @@
+# Virtual environemt
+venv/
+
+# Python specific
+__pycache__/
+*.pyc
+
+# Test file
+playground.py
+
+# Secrets
+secrets/
+
+# Logs
+logs/
+
+# Scripts
+*.sh
+
+# Env
+.vscode
