@@ -3,8 +3,6 @@ import os
 import sys
 import math
 
-from common.utils.read_json import read_json
-
 class NewsCrawler():
     """
     Interface to the google news API
@@ -18,9 +16,7 @@ class NewsCrawler():
         """
         Set up credentials and urls
         """
-        credentials_path = os.environ['NEWS_APPLICATION_CREDENTIALS']
-        credentials = read_json(credentials_path)
-        self.api_key = credentials["API_KEY"]
+        self.api_key = os.environ["NEWS_API_KEY"]
 
         # URLS
         self.url_search_headlines = 'https://newsapi.org/v2/top-headlines?'
