@@ -31,13 +31,15 @@ class NewsCrawler():
         """
         title = article['title']
         author = article['author']
-        content = article['description']
+        text = article['description']
+        timestamp = article['publishedAt']
 
         news_dict = { 
             'keyword_id': keyword._id,
             'title': title,
             'author': author,
-            'content': content 
+            'text': text,
+            'timestamp': timestamp
         }
         return news_dict
 
