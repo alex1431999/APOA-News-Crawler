@@ -90,7 +90,7 @@ class NewsCrawler():
                 news['articles'] = news['articles'][:limit] # Make sure you don't exceed the limit
                 page_count_current += 1
             else: # The dev version only allows for 100 results
-                exit()
+                break
 
         news = [self.__article_to_news_dict(keyword, article) for article in news['articles']] # Cast articles to news_result objects
         return news
