@@ -8,11 +8,11 @@ from common.utils.logging import DEFAULT_LOGGER, LogTypes
 from common.celery import queues
 from celery import Celery
 
-from controller import Controller
-
 app = Celery('tasks',
     broker = os.environ['BROKER_URL']
 )
+
+from controller import Controller
 
 @app.task(name='crawl-news-keyword', queue=queues['news'])
 def crawl_twitter_keyword(keyword_string, language):
@@ -22,6 +22,7 @@ def crawl_twitter_keyword(keyword_string, language):
     :param str keyword_string: The target keyword string
     :param str language: The target language
     """
+    exit()
     controller = Controller()
     DEFAULT_LOGGER.log('Received news keyword crawl request for {} ({})'.format(keyword_string, language), log_type=LogTypes.INFO.value)
     result = controller.run_single_keyword(keyword_string, language)
