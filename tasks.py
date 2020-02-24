@@ -22,7 +22,6 @@ def crawl_twitter_keyword(keyword_string, language):
     :param str keyword_string: The target keyword string
     :param str language: The target language
     """
-    exit()
     controller = Controller()
     DEFAULT_LOGGER.log('Received news keyword crawl request for {} ({})'.format(keyword_string, language), log_type=LogTypes.INFO.value)
     result = controller.run_single_keyword(keyword_string, language)
