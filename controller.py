@@ -2,6 +2,7 @@
 Module to hanlde different scripts that the crawler can execute
 """
 
+from common.utils.logging import DEFAULT_LOGGER, LogTypes
 from common.mongo.controller import MongoController
 from common.celery import queues
 
@@ -37,6 +38,8 @@ class Controller():
             return_object=True,
             cast=True
         )
+
+        DEFAULT_LOGGER.log(f'Stored crawl result {crawl.to_json()}', log_type=LogTypes.INFO.value)
 
         app.send_task('process-crawl', kwargs={ 'crawl_dict': crawl.to_json() }, queue=queues['processor'])
 
