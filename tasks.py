@@ -15,7 +15,7 @@ app = Celery('tasks',
 from controller import Controller
 
 @app.task(name='crawl-news-keyword', queue=queues['news'])
-def crawl_twitter_keyword(keyword_string, language):
+def crawl_news_keyword(keyword_string, language):
     """
     Crawl a single keyword Task
 
