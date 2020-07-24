@@ -14,4 +14,4 @@ six==1.13.0
 typed-ast==1.4.0
 urllib3==1.25.7
 wrapt==1.11.2
-git+ssh://git@gitlab.com/alex1431999/final-year-project-common.git
+git+ssh://git@gitlab.com/apoax/APOAX-Common.git
